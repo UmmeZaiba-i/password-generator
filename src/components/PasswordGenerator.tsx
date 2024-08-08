@@ -15,7 +15,7 @@ const PasswordGenerator:React.FC = () => {
         const randomIndex = Math.floor(Math.random() * characters.length)
         return characters[randomIndex]
     }
-    // function to shuffle the password
+    // function to shuffle the password - 
     function shufflePassword(password:string):string{
         // splitting the password
         const passwordArray = password.split('')
