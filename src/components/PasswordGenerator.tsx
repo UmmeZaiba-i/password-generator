@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './PasswordGenerator.css'
 
 const PasswordGenerator:React.FC = () => {
     const [passwordLength, setPasswordLength] = useState(12)
@@ -33,7 +34,7 @@ const PasswordGenerator:React.FC = () => {
        let password = '';
     //    generating randomcharacters 
        for(let i = 0;i<length;i++){
-        password +=getRandomCharacter(allCharacters);
+        password +=getRandomCharacter(allCharacters); 
        }
        return shufflePassword(password)
     }
@@ -43,7 +44,7 @@ const PasswordGenerator:React.FC = () => {
         setPassword(newPassword)
     }
     return (
-        <div>
+        <div className="password-generator">
             <label htmlFor="password-length">Password length:</label>
             <input 
                 type="number"
@@ -53,7 +54,7 @@ const PasswordGenerator:React.FC = () => {
                 min="1"
             />
             <button onClick={handleGeneratePassword}>Generate Password</button>
-            <div>
+            <div className="generated-password">
                 <h4>Generated Password: </h4>
                 <p>{password}</p>
             </div>
@@ -62,3 +63,4 @@ const PasswordGenerator:React.FC = () => {
 }
 
 export default PasswordGenerator
+                    
